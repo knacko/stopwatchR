@@ -1,4 +1,5 @@
+#' @import datastructures
 .onLoad <- function(libname, pkgname)
 {
-  assign(".stopwatchR", hashmap(), envir=baseenv())
+  assign(".stopwatchR", datastructures::hashmap(key.class = c("character")), envir=baseenv())
 }
