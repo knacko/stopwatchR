@@ -1,4 +1,8 @@
-test_that("stopwatchR", {
+
+func <- function() {
+
+  expect_error(split_time())
+  expect_error(stop_time())
 
   start_time()
 
@@ -18,6 +22,15 @@ test_that("stopwatchR", {
   elapsed_time <- capture.output(paste(stop_time()))[1]
   elapsed_time <- as.numeric(strsplit(elapsed_time, " ")[[1]][1])
   expect_equal(elapsed_time, 3, tolerance = 0.1)
-})
 
+  expect_error(split_time())
+  expect_error(stop_time())
+
+}
+
+test_that("stopwatchR", {
+
+  func()
+
+})
 
